@@ -5,6 +5,8 @@ const tableData = data;
 // highly dynamic graphics in an HTML webpage. 
 
 var tbody = d3.select("tbody");
+// with the above code we declare a variable tbody
+// use d3.select to return all tbody tags in HTML
 
 function buildTable(data){
 // First, clear out any existing data
@@ -25,3 +27,24 @@ function buildTable(data){
        });
     });
 }
+
+function handleClick(){
+    let date = d3.select("#datetime").property("value");
+// .select will select the 1st instance that matches the following condition
+//here - it looks fro #datetime and gets the value
+    let filteredData = tableData; 
+//if a date is entered - filter the table data based on the date
+    if (date){
+        filteredData = filteredData.filter(row => row.datetime === date);
+    };
+// build the display table using the filtered data and the buildTable function
+// Note - if no date is entered - the whole data table will be returned
+    buildTable(filteredData); 
+}
+
+// this part will call the handleClick() when a user clicks the 'filter-btn'
+d3.selectAll("#filter-btn").on("click",handleClick);
+
+//finally build the table when the page loads
+buildTable(tableData);
+
