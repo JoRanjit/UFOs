@@ -30,5 +30,5 @@ The webpage will allow users to view the data (HTML) and a dynamic table that wi
 ### We used bootstrap and css styles (style.css file) - like background image, fonts etc. to customize the webpage.
 
 ### Here's the final look of the 'UFO Signtings' webpage:
-  * Users can filter the data by date, city, state etc. and view the table on the right get updated based on their filters.
+  * Users can filter the data by date, city, state etc. and 'UFO Sightings table' on the right will update dynamically based on their selection.
 ![Webpage]( https://github.com/JoRanjit/UFOs/blob/main/static/Images/webpage.PNG)
